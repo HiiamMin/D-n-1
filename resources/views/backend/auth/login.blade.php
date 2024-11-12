@@ -118,7 +118,7 @@
                 <form role="form" class="text-start" method="post" action="{{ route('auth.login')}}">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label"></label>
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Emai 11gol">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label"></label>
