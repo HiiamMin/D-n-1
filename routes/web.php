@@ -8,4 +8,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('login',[AuthController::class,'login'])->name('auth-login');
+Route::get('admin',[AuthController::class,'index'])->name('auth.admin');
+Route::post('login',[AuthController::class,'login'])->name('auth.login');

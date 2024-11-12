@@ -11,7 +11,12 @@ class AuthController extends Controller
 
     }
 
-    public function login(){
-        return view ('backend.auth.login');
+
+    public function index(){
+        return view ('backend/auth/login');
+    }
+
+    public function login() { 
+        echo 1;die();
     }
 }
