@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -114,26 +114,33 @@
                 </div>
               </div>
               <div class="card-body">
-                <!-- Form -->
-                <form role="form" class="text-start" method="post" action="{{ route('auth.login')}}">
+
+                <form role="form" class="text-start" method="post" action="{{route('auth.login')}}">
+                  @csrf
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label"></label>
-                    <input type="email" class="form-control" placeholder="Emai 11gol">
+                    <input type="text" class="form-control" placeholder="Email" name="Email"> 
                   </div>
+                  @if($errors->has('Email'))
+                  <div class="errors-message">{{$errors->first('Email')}}</div>
+                  @endif
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label"></label>
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="Password">
                   </div>
+                  @if($errors->has('Password'))
+                  <div class="errors-message">{{$errors->first('Password')}}</div>
+                  @endif
                   <div class="form-check form-switch d-flex align-items-center mb-3">
-                    <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                    <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe" checked>
                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign in</button>
+                    <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign in</button>
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?
-                    <a href="../pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    {{-- <a href="{{route('')}" class="text-primary text-gradient font-weight-bold">Sign up</a> --}}
                   </p>
                 </form>
                 <!-- FORM end -->
