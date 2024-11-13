@@ -114,8 +114,8 @@
                 </div>
               </div>
               <div class="card-body">
-                <!-- Form -->
-                <form role="form" class="text-start" method="post" action="{{ route('auth.login')}}">
+
+                <form role="form" class="text-start" method="post" action="{{route('auth.login')}}">
                   @csrf
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label"></label>
@@ -124,6 +124,7 @@
                   @if($errors->has('Email'))
                   <div class="errors-message">{{$errors->first('Email')}}</div>
                   @endif
+    
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label"></label>
                     <input type="password" class="form-control" placeholder="Password" name="Password">
@@ -131,6 +132,7 @@
                   @if($errors->has('Password'))
                   <div class="errors-message">{{$errors->first('Password')}}</div>
                   @endif
+
                   <div class="form-check form-switch d-flex align-items-center mb-3">
                     <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe" checked>
                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
