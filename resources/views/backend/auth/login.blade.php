@@ -114,12 +114,12 @@
                 </div>
               </div>
               <div class="card-body">
-
-                <form role="form" class="text-start" method="post" action="{{route('auth.login')}}">
+                <!-- Form -->
+                <form role="form" class="text-start" method="post" action="{{ route('auth.login')}}">
                   @csrf
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label"></label>
-                    <input type="text" class="form-control" placeholder="Email" name="Email"> 
+                    <input type="email" class="form-control" placeholder="Email" name="Email">
                   </div>
                   @if($errors->has('Email'))
                   <div class="errors-message">{{$errors->first('Email')}}</div>
